@@ -13,7 +13,7 @@ int main() {
   std::string title = 'si';
 }*/
 
-#include <iostream>
+/* #include <iostream>
 #include <string>
 
 int main() {
@@ -21,4 +21,14 @@ int main() {
   std::cout << "Whts your name?\n";
   std::cin >> name;
   std::cout << "Hello, " << name << "!\n";
+} */
+
+#include <iostream>
+
+int main() {
+  int a;
+  int b;
+  int c;
+  std::cin >> a >> b >> c;
+  std::cout << a << ' ' << b << ' ' << c << '\n';
 }
