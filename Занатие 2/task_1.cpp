@@ -2,7 +2,7 @@
 
 
 int main() {
-    int a, b;
+    double a, b;
     char operator_;
 
     std::cout << "Put operation: ";
@@ -15,22 +15,25 @@ int main() {
     std::cin >> b;
 
     std::cout << "Result: ";
-    if (operator_ == '+') {
-        std::cout << a + b << "\n";
-    } 
-    else if (operator_ == '-') {
-        std::cout << a - b << "\n";
+    switch (operator_) {
+        case '+': 
+            std::cout << a + b << "\n";
+            break;
+        case '-':
+            std::cout << a - b << "\n";
+            break;
+        case '/':
+            if (b == 0)
+                std::cout << "Error, the values are not correct";
+            else
+                std::cout << a / b << "\n";
+            break;
+        case '*':
+            std::cout << a * b << "\n";
+            break;
+        default:
+            std::cout << "Unknown operation";
     }
-    else if (operator_ == '/') {
-        if (b == 0)
-            std::cout << "Error, the values are not correct";
-        else
-            std::cout << a / b << "\n";
-    }
-    else if (operator_ == '*') {
-        std::cout << a * b << "\n";
-    }
-    else {
-        std::cout << "Unknown operation";
-    }
+
+    return 0;
 }
