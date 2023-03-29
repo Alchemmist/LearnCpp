@@ -18,6 +18,13 @@ auto get_stack(int count) {
 }
 
 
+void print_stack(auto sequence) {
+    for (std::stack<int> dump = sequence; !dump.empty(); dump.pop())
+        std::cout << dump.top() << ' ';
+    std::cout << std::endl;
+}
+
+
 auto transfer_stack(std::stack<int> st) {
     std::stack<int> result_st;
 
@@ -47,14 +54,10 @@ int main() {
     st_2 = transfer_stack(st_1_copy);
 
     std::cout << "Steck 1: " << std::endl;
-    for (std::stack<int> dump = st_1; !dump.empty(); dump.pop())
-        std::cout << dump.top() << ' ';
-    std::cout << std::endl;
+    print_stack(st_1);
 
     std::cout << "Steck 2: " << std::endl;
-    for (std::stack<int> dump = st_2; !dump.empty(); dump.pop())
-        std::cout << dump.top() << ' ';
-    std::cout << std::endl;
-    
+    print_stack(st_2);
+
     return 0;
 }
