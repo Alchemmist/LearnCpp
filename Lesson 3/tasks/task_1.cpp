@@ -18,6 +18,18 @@ auto get_stack(int count) {
 }
 
 
+auto transfer_stack(std::stack<int> st) {
+    std::stack<int> result_st;
+
+    while (!st.empty()) {
+        result_st.push(st.top());
+        st.pop();
+    }
+
+    return result_st;
+}
+
+
 int main() {
     // размеры стеков
     int count_1, count_2;
@@ -29,6 +41,20 @@ int main() {
     std::cout << "Put count of stack 2: ";
     std::cin >> count_2;
     std::stack<int> st_2 = get_stack(count_2);
+    std::stack<int> st_1_copy = transfer_stack(st_1);
 
+    st_1 = transfer_stack(st_2);
+    st_2 = transfer_stack(st_1_copy);
+
+    std::cout << "Steck 1: " << std::endl;
+    for (std::stack<int> dump = st_1; !dump.empty(); dump.pop())
+        std::cout << dump.top() << ' ';
+    std::cout << std::endl;
+
+    std::cout << "Steck 2: " << std::endl;
+    for (std::stack<int> dump = st_2; !dump.empty(); dump.pop())
+        std::cout << dump.top() << ' ';
+    std::cout << std::endl;
+    
     return 0;
 }
