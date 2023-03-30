@@ -7,11 +7,10 @@ void print_vecotr(std::vector<int> sequence) {
         std::cout << sequence[i] << ' ';
      }
      std::cout << std::endl;
-
 }
 
 
-auto bobbel_sort(std::vector<int> surce_vec) {
+std::vector<int> bobbel_sort(std::vector<int> surce_vec) {
      std::vector<int> result_vec = surce_vec;
      for (int i; i < result_vec.size(); i++) {
           for (int i; i < result_vec.size() - 1; i++) {
